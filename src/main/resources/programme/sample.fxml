@@ -1,0 +1,33 @@
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import programme.elements.LynxCanvas?>
+<?import programme.elements.Console?>
+<?import programme.elements.ErrorOutput?>
+<?import javafx.scene.layout.Pane?>
+<?import programme.elements.VariablesDisplayer?>
+<?import javafx.scene.control.TextArea?>
+<HBox fx:controller="programme.controllers.Controller"
+      xmlns:fx="http://javafx.com/fxml"
+      layoutX="20" layoutY="20" prefHeight="700" prefWidth="200" maxHeight="700" maxWidth="500"
+      fillHeight="false">
+    <VBox prefWidth="440">
+        <HBox styleClass="centerElements" prefHeight="30">
+            <Button text="Commands" onAction="#loadConsole"/>
+            <Button text="Procedures" onAction="#loadProcedures"/>
+            <Button text="Variables state" onAction="#loadEnvironment"/>
+            <Button text="Load file" onAction="#loadFile"/>
+            <Button text="Clean" onAction="#clean"/>
+        </HBox >
+        <Pane>
+            <Console fx:id="console" prefWidth="440" prefHeight="600"/>
+            <VBox styleClass="centerElements" fx:id="programmeVBox" prefWidth="440" prefHeight="600" visible="false" >
+                <TextArea fx:id="programmeContent" prefWidth="440" prefHeight="560"/>
+                <Button  text="Execute" onAction="#executeProgramme" />
+            </VBox>
+            <VariablesDisplayer prefWidth="440" prefHeight="600" fx:id="environment" visible="false" editable="false"/>
+        </Pane >
+        <ErrorOutput fx:id="error_reporter" text="Console translator" prefHeight="100" prefWidth="440"/>
+    </VBox>
+    <LynxCanvas fx:id="lynxCanvas"/>
+</HBox>

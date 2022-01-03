@@ -1,0 +1,5 @@
+procedure square :x [
+    repeat 4 [
+        forward :x left 90
+    ]
+]

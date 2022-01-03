@@ -1,0 +1,19 @@
+HBox {
+    -fx-spacing: 5;
+}
+
+Button {
+    -fx-spacing: 5;
+}
+
+.centerElements {
+    -fx-alignment: center;
+}
+
+LynxCanvas {
+    -fx-spacing: 5;
+}
+
+VariablesDisplayer {
+    -fx-spacing: 5;
+}
